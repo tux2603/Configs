@@ -1,0 +1,48 @@
+separator=false
+color=#fb8b01
+
+[rhythmbox]
+command=/home/rjslater/.config/i3blocks/scripts/rhythmboxCurrentlyPlaying.py
+interval=1
+
+[gmail]
+command=/home/rjslater/.config/i3blocks/scripts/gmailNotifier.py
+interval=5
+
+[volume]
+command=/home/rjslater/.config/i3blocks/scripts/volume.py
+interval=repeat
+
+[cpu load]
+command=/home/rjslater/.config/i3blocks/scripts/cpuLoad.py
+interval=1
+
+[cpu temp]
+command=/home/rjslater/.config/i3blocks/scripts/cpuTemp.py
+interval=1
+
+[mem load]
+command=/home/rjslater/.config/i3blocks/scripts/memLoad.py
+interval=1
+
+[fs usage]
+command=/home/rjslater/.config/i3blocks/scripts/fsUsage.py
+interval=60
+
+[network]
+command=/home/rjslater/.config/i3blocks/scripts/network.py
+interval=5
+
+[battery]
+command=/home/rjslater/.config/i3blocks/scripts/battery.py
+interval=10
+
+[datetime]
+command=/home/rjslater/.config/i3blocks/scripts/dateAndTime.py
+interval=1
+
+#[upgrade system]
+#full_text=
+#min_width=Button
+#command=konsole -e /home/rjslater/.config/i3blocks/scripts/upgradeSystem.sh
+
