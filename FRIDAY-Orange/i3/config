@@ -238,4 +238,4 @@ bindsym $mod+Ctrl+Shift+p exec poweroff
 
 
 # ----- AUTO MOUNTS -----
-exec /home/rjslater/mountJulien.sh
+# exec /home/rjslater/mountJulien.sh
