@@ -236,6 +236,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
 
+# Toggle wifi
+bindsym XF86WLAN exec /home/rjslater/.config/i3/toggleWifi.sh
+
 # Poweroff shortcut
 bindsym $mod+Ctrl+Shift+p exec poweroff
 
