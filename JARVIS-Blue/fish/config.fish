@@ -21,3 +21,6 @@ eval (eval /home/rjslater/anaconda3/bin/conda "shell.fish" "hook" $argv)
 
 # Quick ping check alias
 alias ping="ping 8.8.8.8 -c 5"
+
+# Backup alias
+alias backup="/home/rjslater/backupJARVIS.sh ; /home/rjslater/backupJulien.sh"
