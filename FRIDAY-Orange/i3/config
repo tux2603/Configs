@@ -206,7 +206,7 @@ bindsym $mod+m exec rhythmbox
 bindsym XF86Tools exec "konsole -e htop"
 
 # Vifm
-bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents" 
+bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents"
 
 # Outlook (WSU email)
 bindsym $mod+o exec "firefox https://outlook.wright.edu"
@@ -241,7 +241,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
 
 # Toggle wifi
-bindsym XF86WLAN exec /home/rjslater/.config/i3/toggleWifi.sh
+bindsym XF86WLAN exec /home/rjslater/.config/i3/notifyWifi.py && /home/rjslater/.config/i3/toggleWifi.py
 
 # Poweroff shortcut
 bindsym $mod+Ctrl+Shift+p exec poweroff
