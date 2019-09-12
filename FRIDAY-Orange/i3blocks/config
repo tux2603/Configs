@@ -40,9 +40,3 @@ interval=10
 [datetime]
 command=/home/rjslater/.config/i3blocks/scripts/dateAndTime.py
 interval=1
-
-#[upgrade system]
-#full_text=
-#min_width=Button
-#command=konsole -e /home/rjslater/.config/i3blocks/scripts/upgradeSystem.sh
-
