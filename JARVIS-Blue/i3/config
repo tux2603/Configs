@@ -10,6 +10,7 @@ font pango:monospace 12
 # Make i3 support transparency
 exec --no-startup-id compton &
 bar {
+    tray_output none
     font pango:FontAwesome 12, monospace 12
     i3bar_command i3bar -t
     status_command i3blocks
