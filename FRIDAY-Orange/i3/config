@@ -117,7 +117,7 @@ bindsym $mod+v split v
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym Control+q kill
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -200,6 +200,9 @@ bindsym $mod+g exec "firefox https://mail.google.com"
 
 # Music player
 bindsym $mod+m exec rhythmbox
+
+# Htop
+bindsym XF86Tools exec "konsole -e htop"
 
 # Vifm
 bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents" 
