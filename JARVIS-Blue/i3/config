@@ -193,6 +193,9 @@ bindsym $mod+w exec "firefox"
 # GMail
 bindsym $mod+g exec "firefox https://mail.google.com"
 
+# WSU Outlook
+bindsym $mod+o exec firefox https://outlook.office365.com/mail
+
 # Music player
 bindsym $mod+m exec rhythmbox
 
