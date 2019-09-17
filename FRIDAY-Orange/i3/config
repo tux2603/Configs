@@ -7,7 +7,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # Make i3 support transparency
-# exec --no-startup-id compton &
+exec --no-startup-id compton &
 
 # i3bar
 bar {
