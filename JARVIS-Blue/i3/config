@@ -242,8 +242,7 @@ bindsym $mod+Ctrl+Shift+p exec poweroff
 exec sleep 5 ; xrandr --output HDMI-0 --left-of eDP-1-1 --auto
 
 # Set wallpaper with nitrogen
-# exec --no-startup-id sleep 7 ; nitrogen --restore
-exec --no-startup-id sleep 7 ; ~/.config/i3/wallpaperSwitcher.sh  # Uses feh now
+exec --no-startup-id sleep 7 ; nitrogen --restore
 
 
 
