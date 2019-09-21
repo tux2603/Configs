@@ -37,6 +37,8 @@ def getIPAndType():
 
     for device in cleanedDevices:
         if 'running' in device['status']:
+            # print('type: ', device['type'])
+            # print('addr: ', device['IP address'])
             return device['type'], device['IP address']
 
 
@@ -46,38 +48,40 @@ def getSSID():
     output = ps.communicate()[0].decode('utf-8').strip()
 
     networks = []  # list of dicts of networks
-    for line in output.split('\n'):
+    for i in range(1, len(output.split('\n'))):
+        line = output.split('\n')[i]
         # Add not in use placeholder
         if '*' not in line:
             line = '.' + line
         # Split output into list of properties
         properties = line.split('  ')
-        i = 0
-        while i < len(properties):
-            if len(properties[i]) == 0 or properties[i] == ' ':
-                properties.pop(i)
+        j = 0
+        while j < len(properties):
+            if len(properties[j]) == 0 or properties[j] == ' ':
+                properties.pop(j)
             else:
-                properties[i] = properties[i].strip()
-                i += 1
+                properties[j] = properties[j].strip()
+                j += 1
 
         network = {}
-        network['inUse'] = True if properties[0] == '*' else False
-        network['SSID'] = properties[1].strip()
-        network['mode'] = properties[2].strip()
-        network['channel'] = properties[3].strip()
-        network['rate'] = properties[4].strip()
-        network['signal'] = properties[5].strip()
-        network['bars'] = properties[6].strip()
-        network['security'] = properties[7].strip()
 
-        networks.append(network)
-
-    # Crop out title row
-    networks.pop(0)
-
-    # Find connected network
-    for network in networks:
-        if network['inUse']:
+        if properties[0] == '*':
+            # network['inUse'] = True
+            network['SSID'] = properties[1].strip()
+            # network['mode'] = properties[2].strip()
+            # network['channel'] = properties[3].strip()
+            # network['rate'] = properties[4].strip()
+            # network['signal'] = properties[5].strip()
+            network['bars'] = len(properties[6].strip())
+            if network['bars'] == 1:
+                network['bars'] = '▂'
+            elif network['bars'] == 2:
+                network['bars'] = '▂▄'
+            elif network['bars'] == 3:
+                network['bars'] = '▂▄▆'
+            else:
+                network['bars'] = '▂▄▆█'
+            # network['security'] = properties[7].strip()
             return network['SSID'], network['bars']
     return ''
 
