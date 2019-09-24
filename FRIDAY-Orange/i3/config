@@ -247,7 +247,9 @@ bindsym XF86WLAN exec /home/rjslater/.config/i3/notifyWifi.py && /home/rjslater/
 # Poweroff shortcut
 bindsym $mod+Ctrl+Shift+p exec poweroff
 
-
+# Battery saver mode
+bindsym XF86Explorer exec sudo tlp ac && notify-send -t 3000 "Performance Mode"
+bindsym XF86LaunchA exec sudo tlp bat && notify-send -t 3000 "Battery Saver"
 
 # ----- AUTO MOUNTS -----
 # exec /home/rjslater/mountJulien.sh
