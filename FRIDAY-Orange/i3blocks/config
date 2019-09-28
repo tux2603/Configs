@@ -11,14 +11,18 @@ interval=5
 
 [volume]
 command=/home/rjslater/.config/i3blocks/scripts/volume.py
-interval=repeat
+interval=1
 
 [backlight]
 command=/home/rjslater/.config/i3blocks/scripts/backlight.py
-interval=repeat
+interval=1
 
 [cpu load]
 command=/home/rjslater/.config/i3blocks/scripts/cpuLoad.py
+interval=5
+
+[cpu speed]
+command=/home/rjslater/.config/i3blocks/scripts/cpuSpeed.py
 interval=5
 
 [cpu temp]
