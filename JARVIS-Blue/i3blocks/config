@@ -11,10 +11,14 @@ interval=5
 
 [volume]
 command=/home/rjslater/.config/i3blocks/scripts/volume.py
-interval=repeat
+interval=1
 
 [cpu load]
 command=/home/rjslater/.config/i3blocks/scripts/cpuLoad.py
+interval=1
+
+[cpu speed]
+command=/home/rjslater/.config/i3blocks/scripts/cpuSpeed.py
 interval=1
 
 [cpu temp]
@@ -41,16 +45,7 @@ interval=60
 command=/home/rjslater/.config/i3blocks/scripts/network.py
 interval=5
 
-[battery]
-command=/home/rjslater/.config/i3blocks/scripts/battery.py
-interval=10
-
 [datetime]
 command=/home/rjslater/.config/i3blocks/scripts/dateAndTime.py
 interval=1
-
-#[upgrade system]
-#full_text=
-#min_width=Button
-#command=konsole -e /home/rjslater/.config/i3blocks/scripts/upgradeSystem.sh
 
