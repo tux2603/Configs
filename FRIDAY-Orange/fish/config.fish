@@ -1,29 +1,30 @@
 set fish_greeting
-# Alias for ls/lsd
-#alias ls='lsd'  # commented out because it was missing some directories
-#alias la='lsd -a'
 
 set PATH /home/rjslater/anaconda3/bin $PATH
-set PATH /usr/lc3/ $PATH
 
 # SSH Aliases
-alias jarvis='/home/rjslater/sshJARVIS.py'
 alias kowalski='/home/rjslater/sshJulien.py'
 alias julien='/home/rjslater/sshJulien.py'
 
 # IP Scanner
-alias ipscan='sudo nmap -sS -p 22 192.168.1.0/24'
+alias ipscan='sudo nmap -sS -p 22 192.168.1.0./24'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# Backup alias
+alias backup='/home/rjslater/backupFRIDAY.sh ; /home/rjslater/backupToJulien.sh'
+
+# Conda init
 eval (eval /home/rjslater/anaconda3/bin/conda "shell.fish" "hook" $argv)
-# <<< conda initialize <<<
 
-# Quick ping check alias
+# Quick ping alias check
 alias ping="ping 8.8.8.8 -c 5"
 
-# Ree for those ree moments
-alias ree="yes rEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+# lsd instead of ls
+alias ls="lsd"
+alias la="lsd -al"
 
-# For when you're upset and using sudo
-alias fucking="sudo"
+# Start X on login
+if status --is-login
+    if test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx
+    end
+end
