@@ -206,6 +206,9 @@ bindsym $mod+m exec rhythmbox
 # Htop
 bindsym XF86Tools exec "konsole -e htop"
 
+# Nautilus
+bindsym $mod+n exec "nautilus /home/rjslater"
+
 # Vifm
 bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents"
 
