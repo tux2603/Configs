@@ -1,9 +1,5 @@
 set fish_greeting
 
-# Alias for ls/lsd
-#alias ls='lsd'  # commented out because it was missing some directories
-#alias la='lsd -a'
-
 set PATH /home/rjslater/anaconda3/bin $PATH
 
 # SSH Aliases
@@ -30,3 +26,6 @@ if status --is-login
         exec startx
     end
 end
+
+# Pfetch is a lighter neofetch
+sh pfetch
