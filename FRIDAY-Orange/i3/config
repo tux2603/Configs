@@ -194,11 +194,11 @@ bindsym $mod+c exec code
 # Discord
 bindsym $mod+d exec discord
 
-# Firefox
-bindsym $mod+w exec "firefox"
+# Qutebrowser
+bindsym $mod+w exec "qutebrowser"
 
 # GMail
-bindsym $mod+g exec "firefox https://mail.google.com"
+bindsym $mod+g exec "qutebrowser https://mail.google.com"
 
 # Music player
 bindsym $mod+m exec rhythmbox
@@ -213,7 +213,7 @@ bindsym $mod+n exec "nautilus /home/rjslater"
 bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents"
 
 # Outlook (WSU email)
-bindsym $mod+o exec "firefox https://outlook.wright.edu"
+bindsym $mod+o exec "qutebrowser https://outlook.wright.edu"
 
 # Steam
 bindsym $mod+s exec steam
@@ -229,7 +229,7 @@ exec --no-startup-id xscreensaver -no-splash
 bindsym $mod+l exec "xscreensaver-command -lock"
 
 # Youtube
-bindsym $mod+y exec firefox youtube.com/feed/subscriptions
+bindsym $mod+y exec qutebrowser youtube.com/feed/subscriptions
 
 
 
