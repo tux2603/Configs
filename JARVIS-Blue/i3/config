@@ -113,7 +113,7 @@ bindsym $mod+v split v
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+q kill
+bindsym Control+q kill
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -188,7 +188,7 @@ bindsym $mod+c exec code
 # Discord
 bindsym $mod+d exec discord
 
-# Qutebrowser 
+# Qutebrowser
 bindsym $mod+w exec "qutebrowser"
 
 # GMail
@@ -225,6 +225,9 @@ bindsym $mod+l exec "xscreensaver-command -lock"
 # Youtube
 bindsym $mod+y exec "qutebrowser youtube.com/feed/subscriptions"
 
+# QR Code Generator (from clipboard)
+bindsym $mod+q exec cliptoqr
+
 
 
 # ----- OTHER CONTROLS -----
@@ -236,6 +239,9 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle 
 
 # Poweroff shortcut
 bindsym $mod+Ctrl+Shift+p exec poweroff
+
+# Cycle audio output device
+bindsym XF86Tools exec --no-startup-id ~/.config/i3/changeAudioDevice.py
 
 
 
