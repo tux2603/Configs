@@ -4,6 +4,7 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 from random import shuffle
 import subprocess
+from os import system
 
 SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
 
@@ -106,7 +107,7 @@ if __name__ == '__main__':
                 if message not in lastKnownUnread:
                     newMessage = message
                     break
-            subprocess.call(['notify-send', '-t', '3000', '\uf0e0 ' + newMessage[1], newMessage[0]])
+            system('notify-send -t 3000 \uf0e0 {} {}'.format(newMessage[1], newMessage[0]))
 
             # Display
             outputString = '\uf0e0 {} {}: {}'.format(len(unreadMessages), unreadMessages[0][1], unreadMessages[0][0])
