@@ -18,8 +18,13 @@ if farenheit[0] == '+':
 celsius = str(int((int(farenheit[:-2]) - 32) * 5.0/9.0)) + '°C'
 
 # Getting sunrise and sunset
-sunrise = time.mktime(astral.Astral().sun_utc(date.today(), 39.784812, -84.069846)['sunrise'].timetuple())
-sunset = time.mktime(astral.Astral().sun_utc(date.today(), 39.784812, -84.069846)['sunset'].timetuple())
+cityName = 'Columbus'
+a = astral.Astral()
+a.solar_depression = 'civil'
+city = a[cityName]
+
+sunrise = time.mktime(city.sun()['sunrise'].timetuple())
+sunset = time.mktime(city.sun()['sunset'].timetuple())
 now = time.time()
 
 # Weather icons
@@ -41,7 +46,7 @@ awesomeIcons = {'cloud':               '\uf0c2',
 icons = {'Cloudy': awesomeIcons['cloud'],
          'Partly cloudy': awesomeIcons['cloud-sun'],
          'Overcast': 'OVERCAST',
-         'Clear': 'CLEAR',
+         'Clear': awesomeIcons['sun'],
          'Sunny': awesomeIcons['sun'],
          'Patchy rain possible': 'PATCHY RAIN POSSIBLE',
          'Moderate rain': 'MODERATE RAIN',
@@ -53,5 +58,7 @@ if condition in icons.keys():
             print(icons[condition] + ' {} ({})'.format(celsius, farenheit))
         else:
             print(awesomeIcons['moon'] + ' {} ({})'.format(celsius, farenheit))
+    else:
+        print(icons[condition] + ' {} ({})'.format(celsius, farenheit))
 else:
     print(condition + ' ICON NOT FOUND {} ({})'.format(celsius, farenheit))
