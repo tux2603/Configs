@@ -35,11 +35,11 @@ awesomeIcons = {'cloud':               '\uf0c2',
 
 icons = {'Cloudy': awesomeIcons['cloud'],
          'Partly cloudy': awesomeIcons['cloud-sun'],
-         'Overcast': '',
-         'Clear': '',
-         'Sunny': '',
-         'Patchy rain possible': '',
-         'Moderate rain': '',
+         'Overcast': 'OVERCAST',
+         'Clear': 'CLEAR',
+         'Sunny': awesomeIcons['sun'],
+         'Patchy rain possible': 'PATCHY RAIN POSSIBLE',
+         'Moderate rain': 'MODERATE RAIN',
          'Light Rain, Mist': awesomeIcons['cloud-rain']}
 
 if condition in icons.keys():
