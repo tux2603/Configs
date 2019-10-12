@@ -45,6 +45,10 @@ interval=5
 command=/home/rjslater/.config/i3blocks/scripts/battery.py
 interval=10
 
+[weather]
+command=/home/rjslater/.config/i3blocks/scripts/weather.py
+interval=60
+
 [datetime]
 command=/home/rjslater/.config/i3blocks/scripts/dateAndTime.py
 interval=1
