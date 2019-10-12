@@ -1,5 +1,8 @@
 #!/home/rjslater/anaconda3/bin/python
 from subprocess import Popen, PIPE, STDOUT
+from datetime import date, datetime
+import astral
+import time
 
 cmd = 'curl wttr.in?format="%C+%t"'
 ps = Popen(cmd, shell=True, stdout=PIPE, stderr=STDOUT)
@@ -13,6 +16,11 @@ farenheit = output[output.rfind(' '):].strip()
 if farenheit[0] == '+':
     farenheit = farenheit[1:]
 celsius = str(int((int(farenheit[:-2]) - 32) * 5.0/9.0)) + '°C'
+
+# Getting sunrise and sunset
+sunrise = time.mktime(astral.Astral().sun_utc(date.today(), 39.784812, -84.069846)['sunrise'].timetuple())
+sunset = time.mktime(astral.Astral().sun_utc(date.today(), 39.784812, -84.069846)['sunset'].timetuple())
+now = time.time()
 
 # Weather icons
 awesomeIcons = {'cloud':               '\uf0c2',
@@ -30,9 +38,6 @@ awesomeIcons = {'cloud':               '\uf0c2',
                 'wind':                '\uf72e',
                 'snowflake':           '\uf2dc'}
 
-#for key in awesomeIcons.keys():
-#    print(fa.icons[key])
-
 icons = {'Cloudy': awesomeIcons['cloud'],
          'Partly cloudy': awesomeIcons['cloud-sun'],
          'Overcast': 'OVERCAST',
@@ -43,6 +48,10 @@ icons = {'Cloudy': awesomeIcons['cloud'],
          'Light Rain, Mist': awesomeIcons['cloud-rain']}
 
 if condition in icons.keys():
-    print(icons[condition] + ' {} ({})'.format(celsius, farenheit))
+    if icons[condition] == awesomeIcons['sun']:
+        if now > sunrise and now < sunset:
+            print(icons[condition] + ' {} ({})'.format(celsius, farenheit))
+        else:
+            print(awesomeIcons['moon'] + ' {} ({})'.format(celsius, farenheit))
 else:
     print(condition + ' ICON NOT FOUND {} ({})'.format(celsius, farenheit))
