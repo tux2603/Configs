@@ -4,7 +4,7 @@
 set $mod Mod4
 
 # Font
-font pango:monospace 8
+font pango:monospace 8, Awesome 8
 
 # Make i3 support transparency
 exec --no-startup-id compton -o 0 &
@@ -215,6 +215,9 @@ bindsym $mod+f exec "konsole -e vifm /home/rjslater /home/rjslater/Documents"
 # Outlook (WSU email)
 bindsym $mod+o exec "qutebrowser https://outlook.wright.edu"
 
+# Pilot
+bindsym $mod+p exec /home/rjslater/.config/i3/openPilot.py
+
 # Steam
 bindsym $mod+s exec steam
 
@@ -230,6 +233,9 @@ bindsym $mod+l exec "xscreensaver-command -lock"
 
 # Youtube
 bindsym $mod+y exec qutebrowser youtube.com/feed/subscriptions
+
+# QR Code Generator (from clipboard)
+bindsym $mod+q exec cliptoqr
 
 
 
