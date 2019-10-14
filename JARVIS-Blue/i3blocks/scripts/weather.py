@@ -53,7 +53,7 @@ icons = {'Cloudy': awesomeIcons['cloud'],
          'Light Rain, Mist': awesomeIcons['cloud-rain']}
 
 if condition in icons.keys():
-    if now > sunset:
+    if not(now > sunrise and now < sunset):
         if icons[condition] == awesomeIcons['sun']:
             print(awesomeIcons['moon'] + ' {} ({})'.format(celsius, farenheit))
         elif icons[condition] == awesomeIcons['cloud-sun']:
