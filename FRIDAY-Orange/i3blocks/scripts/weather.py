@@ -45,7 +45,7 @@ awesomeIcons = {'cloud':               '\uf0c2',
 
 icons = {'Cloudy': awesomeIcons['cloud'],
          'Partly cloudy': awesomeIcons['cloud-sun'],
-         'Overcast': 'OVERCAST',
+         'Overcast': awesomeIcons['cloud'],
          'Clear': awesomeIcons['sun'],
          'Sunny': awesomeIcons['sun'],
          'Patchy rain possible': 'PATCHY RAIN POSSIBLE',
